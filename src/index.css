@@ -1,0 +1,76 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* base resets */
+html, body, #root { height: 100%; }
+
+@layer base {
+  :root {
+    --ring: 0 0 0 3px rgba(59,130,246,0.35);
+  }
+
+  body {
+    @apply bg-white text-slate-800 antialiased;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+}
+
+@layer components {
+  /* Layout */
+  .app-header {
+    @apply bg-brand-dark text-white;
+  }
+  .app-container {
+    @apply container;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md px-5 py-3 font-semibold transition-colors;
+  }
+  .btn-primary {
+    @apply bg-brand-blue hover:bg-blue-600 text-white shadow-card;
+  }
+  .btn-ghost {
+    @apply text-white/90 hover:text-white;
+  }
+
+  /* Cards */
+  .card {
+    @apply rounded-xl shadow-card bg-white;
+  }
+  .card-muted {
+    @apply bg-slate-100 text-slate-800;
+  }
+
+  /* Typography helpers */
+  .eyebrow {
+    @apply uppercase tracking-wide text-xs text-slate-400 font-semibold;
+  }
+  .title-xl {
+    @apply text-4xl md:text-5xl font-extrabold leading-tight;
+  }
+  .copy-muted {
+    @apply text-slate-400;
+  }
+
+  /* Hero */
+  .hero {
+    @apply bg-brand-dark text-white relative overflow-hidden;
+    background-image: theme('backgroundImage.radial-faded');
+  }
+  .hero-figure {
+    @apply card p-4 w-80 h-48 overflow-hidden;
+  }
+}
+
+@layer utilities {
+  .focus-ring {
+    box-shadow: var(--ring);
+  }
+}
